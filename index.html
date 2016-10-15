@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="poker">
+  <head>
+    <script src="https://code.angularjs.org/1.5.8/angular.js"></script>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div ng-controller="pokerController as vm">
+      <h1>Poker hand dealer</h1>
+      <button ng-click ='vm.deal()'>Deal Me!</button>
+      <div>
+        <button ng-click ='vm.data()'>Get Data!</button>
+      </div>
+      <div ng-repeat="hand in vm.render">
+        {{hand.hand}}
+      </div>
+      <div class="cards" ng-repeat="card in vm.hand">
+        <img class='card' ng-src="{{card.image}}"/>
+      </div>
+    </div>
+  </body>
+</html>
